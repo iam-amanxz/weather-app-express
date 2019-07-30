@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://kit.fontawesome.com/df8fde483e.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="container">
+      <div class="heading-part">
+        <h1 class="heading--primary">
+          Welcome to live weather!
+        </h1>
+        <h2 class="heading--secondary">
+          Search for the weather forecast around the globe.
+        </h2>
+      </div>
+      <div class="search-part">
+        <form class="search--form" action="" method="">
+          <input type="text" placeholder="Search for a location..." />
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="location-display">
+        <h3 id="location" class="location"></h3>
+      </div>
+      <div class="main-area">
+        <div class="box-wrapper">
+          <div class="box-wrapper__main box">
+            <div class="box-wrapper__main-icon">
+              <i id="icon" class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="box-wrapper__main-summary">
+              <h3 id="summary">Search to find out...</h3>
+            </div>
+            <div class="box-wrapper__main-date">
+              <h2 id="date"></h2>
+              <h2 id="time"></h2>
+            </div>
+          </div>
+          <div class="box-wrapper__temprature box">
+            <div class="box-wrapper__temprature-title title">
+              <h3 class="title-main">Temprature</h3>
+            </div>
+            <div class="box-wrapper__temprature-text text">
+              <h1 id="temprature" class="text-main">0°</h1>
+            </div>
+          </div>
+          <div class="box-wrapper__humidity box">
+            <div class="box-wrapper__humidity-title title">
+              <h3 class="title-main">Humidity</h3>
+            </div>
+            <div class="box-wrapper__humidity-text text">
+              <h1 id="humidity" class="text-main">0</h1>
+            </div>
+          </div>
+          <div class="box-wrapper__precipitation box">
+            <div class="box-wrapper__precipitation-title title">
+              <h3 class="title-main">Precipitation</h3>
+            </div>
+            <div class="box-wrapper__precipitation-text text">
+              <h1 id="precipProbability" class="text-main">0</h1>
+            </div>
+          </div>
+          <div class="box-wrapper__uvindex box">
+            <div class="box-wrapper__uvindex-title title">
+              <h3 class="title-main">UV Index</h3>
+            </div>
+            <div class="box-wrapper__uvindex-text text">
+              <h1 id="uvIndex" class="text-main">0</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

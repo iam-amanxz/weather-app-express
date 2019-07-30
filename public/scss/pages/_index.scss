@@ -1,0 +1,19 @@
+.main-area {
+  .box-wrapper {
+    &__main {
+      background: $color--2;
+    }
+    &__temprature {
+      background: $color--4;
+    }
+    &__humidity {
+      background: $color--3;
+    }
+    &__precipitation {
+      background: $color--5;
+    }
+    &__uvindex {
+      background: $color--1;
+    }
+  }
+}
