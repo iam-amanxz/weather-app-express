@@ -3,6 +3,9 @@
     font-size: 5rem;
     color: $color--heading-primary;
     font-weight: 700;
+    a {
+      text-decoration: none;
+    }
   }
   .heading--secondary {
     font-size: 3rem;

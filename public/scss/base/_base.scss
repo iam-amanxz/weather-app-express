@@ -34,4 +34,7 @@ body {
   min-height: 100vh;
   background: $color-background;
   color: #fff;
+  @include respond(tab-land) {
+    margin-bottom: 5rem;
+  }
 }

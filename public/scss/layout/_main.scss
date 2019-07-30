@@ -100,6 +100,7 @@
           @include respond(tab-port) {
             grid-column: 1/2;
             grid-row: 6/7;
+            margin-bottom: 4rem;
           }
         }
       }

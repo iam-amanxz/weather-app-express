@@ -6,7 +6,7 @@ const forecast = (latitude, longitude, callback) => {
     latitude +
     "," +
     longitude +
-    "?units=auto";
+    "?units=si";
 
   request({ url, json: true }, (error, { body }) => {
     //getting data from api and saving it in variables

@@ -57,10 +57,20 @@ body {
   color: #fff;
 }
 
+@media only screen and (max-width: 75em) {
+  body {
+    margin-bottom: 5rem;
+  }
+}
+
 .heading-part .heading--primary {
   font-size: 5rem;
   color: #00db49;
   font-weight: 700;
+}
+
+.heading-part .heading--primary a {
+  text-decoration: none;
 }
 
 .heading-part .heading--secondary {
@@ -378,6 +388,7 @@ body {
     -ms-grid-row: 6;
     -ms-grid-row-span: 1;
     grid-row: 6/7;
+    margin-bottom: 4rem;
   }
 }
 

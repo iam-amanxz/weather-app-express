@@ -44,13 +44,16 @@ switch (current_month) {
 date.textContent = current_date + " | " + current_month;
 time.textContent = current_time;
 
+function refreshPage() {
+  window.location.reload();
+}
+
 weatherForm.addEventListener("submit", e => {
   e.preventDefault();
 
   const location = search.value;
   place.textContent = "loading...";
   summary.textContent = "";
-  date.textContent = "";
   temprature.textContent = "";
   precipProbability.textContent = "";
   uvIndex.textContent = "";
@@ -63,7 +66,7 @@ weatherForm.addEventListener("submit", e => {
       } else {
         place.textContent = data.location;
         summary.textContent = data.forecast[0];
-        temprature.textContent = data.forecast[1];
+        temprature.textContent = Math.round(data.forecast[1]) + "°";
         precipProbability.textContent = data.forecast[2];
         uvIndex.textContent = data.forecast[3];
         humidity.textContent = data.forecast[4];
