@@ -2,16 +2,16 @@
   .heading--primary {
     font-size: 5rem;
     color: $color--heading-primary;
+    font-weight: 700;
   }
   .heading--secondary {
     font-size: 3rem;
     color: $color--heading-secondary;
+    font-weight: 500;
   }
 }
 
 .search-part {
-  width: 100%;
-  margin-top: 1rem;
   input {
     background: rgb(238, 238, 238);
     border: none;
@@ -20,6 +20,9 @@
     padding: 1rem;
     border-radius: 0.8rem;
     width: 60%;
+    @include respond(phone) {
+      width: 100%;
+    }
 
     &::placeholder {
       color: rgb(224, 224, 224) (37, 37, 37);
@@ -28,17 +31,27 @@
   }
   button {
     border: none;
-    padding: 0.7rem 2rem;
+    padding: 0.9rem 2.8rem;
     margin-left: 3rem;
     font-size: 2rem;
     border-radius: 0.8rem;
+    cursor: pointer;
+    @include respond(phone) {
+      margin-left: 0rem;
+      margin-top: 1rem;
+      float: right;
+    }
+
+    &:hover {
+      filter: brightness(110%);
+    }
   }
 }
 
 .location-display {
   margin-top: 1rem;
   .location {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: $color--location;
   }
 }
@@ -55,14 +68,19 @@
         padding: 0 1rem;
       }
       &-date {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
       }
     }
     .title {
       font-size: 2rem;
+      font-weight: 500;
+      @include respond(tab-land) {
+        padding-top: 2rem;
+      }
     }
     .text {
-      font-size: 4rem;
+      font-size: 8rem;
+      font-weight: 700;
     }
   }
 }

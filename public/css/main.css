@@ -1,3 +1,17 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +30,26 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
-  font-family: "techna sans", "Poppins", sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   line-height: 1.3;
   min-height: 100vh;
@@ -28,16 +60,13 @@ body {
 .heading-part .heading--primary {
   font-size: 5rem;
   color: #00db49;
+  font-weight: 700;
 }
 
 .heading-part .heading--secondary {
   font-size: 3rem;
   color: #1ccad8;
-}
-
-.search-part {
-  width: 100%;
-  margin-top: 1rem;
+  font-weight: 500;
 }
 
 .search-part input {
@@ -48,6 +77,12 @@ body {
   padding: 1rem;
   border-radius: 0.8rem;
   width: 60%;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .search-part input {
+    width: 100%;
+  }
 }
 
 .search-part input::-webkit-input-placeholder {
@@ -72,10 +107,24 @@ body {
 
 .search-part button {
   border: none;
-  padding: 0.7rem 2rem;
+  padding: 0.9rem 2.8rem;
   margin-left: 3rem;
   font-size: 2rem;
   border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .search-part button {
+    margin-left: 0rem;
+    margin-top: 1rem;
+    float: right;
+  }
+}
+
+.search-part button:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 .location-display {
@@ -83,7 +132,7 @@ body {
 }
 
 .location-display .location {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #cc004e;
 }
 
@@ -97,15 +146,23 @@ body {
 }
 
 .main-area .box-wrapper__main-date {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
 }
 
 .main-area .box-wrapper .title {
   font-size: 2rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 75em) {
+  .main-area .box-wrapper .title {
+    padding-top: 2rem;
+  }
 }
 
 .main-area .box-wrapper .text {
-  font-size: 4rem;
+  font-size: 8rem;
+  font-weight: 700;
 }
 
 .main-wrapper .container {
@@ -121,6 +178,33 @@ body {
           justify-content: center;
   height: 100vh;
   margin: 0 25rem;
+}
+
+@media only screen and (max-width: 75em) {
+  .main-wrapper .container {
+    margin: 5rem 15rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container {
+    margin: 15 10rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .main-wrapper .container {
+    margin: 2rem 5rem;
+  }
+}
+
+.main-wrapper .container .search-part {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.main-wrapper .container .search-part button {
+  display: inline-block;
 }
 
 .main-wrapper .container .main-area {
@@ -148,6 +232,23 @@ body {
   grid-gap: 3rem;
 }
 
+@media only screen and (max-width: 75em) {
+  .main-wrapper .container .main-area .box-wrapper {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+    grid-gap: 3rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container .main-area .box-wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-row: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
 .main-wrapper .container .main-area .box-wrapper .box {
   color: #fbfef9;
   border-radius: 1.5rem;
@@ -172,6 +273,12 @@ body {
   grid-row: 1/3;
 }
 
+@media only screen and (max-width: 75em) {
+  .main-wrapper .container .main-area .box-wrapper__main {
+    padding: 2rem;
+  }
+}
+
 .main-wrapper .container .main-area .box-wrapper__temprature {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -179,6 +286,17 @@ body {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container .main-area .box-wrapper__temprature {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
 }
 
 .main-wrapper .container .main-area .box-wrapper__humidity {
@@ -190,6 +308,28 @@ body {
   grid-row: 1/2;
 }
 
+@media only screen and (max-width: 75em) {
+  .main-wrapper .container .main-area .box-wrapper__humidity {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container .main-area .box-wrapper__humidity {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+  }
+}
+
 .main-wrapper .container .main-area .box-wrapper__precipitation {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -197,6 +337,17 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container .main-area .box-wrapper__precipitation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+  }
 }
 
 .main-wrapper .container .main-area .box-wrapper__uvindex {
@@ -208,9 +359,33 @@ body {
   grid-row: 2/3;
 }
 
+@media only screen and (max-width: 75em) {
+  .main-wrapper .container .main-area .box-wrapper__uvindex {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main-wrapper .container .main-area .box-wrapper__uvindex {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+  }
+}
+
 .btn {
+  font-family: Roboto;
   background: #00db49;
   color: #fbfef9;
+  font-weight: 500;
 }
 
 .main-area .box-wrapper__main {

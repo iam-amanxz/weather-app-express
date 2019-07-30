@@ -5,7 +5,23 @@
     justify-content: center;
     height: 100vh;
     margin: 0 25rem;
+    @include respond(tab-land) {
+      margin: 5rem 15rem;
+    }
+    @include respond(tab-port) {
+      margin: 15 10rem;
+    }
+    @include respond(phone) {
+      margin: 2rem 5rem;
+    }
 
+    .search-part {
+      width: 100%;
+      margin-top: 1rem;
+      button {
+        display: inline-block;
+      }
+    }
     .main-area {
       margin-top: 1rem;
       display: flex;
@@ -20,6 +36,16 @@
         grid-row: 1fr 1fr;
         grid-gap: 3rem;
 
+        @include respond(tab-land) {
+          grid-template-columns: 1fr 1fr;
+          grid-row: 1fr 1fr 1fr;
+          grid-gap: 3rem;
+        }
+        @include respond(tab-port) {
+          grid-template-columns: 1fr;
+          grid-row: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
         .box {
           color: $color--text;
           border-radius: 1.5rem;
@@ -32,22 +58,49 @@
         &__main {
           grid-column: 1/2;
           grid-row: 1/3;
+          @include respond(tab-land) {
+            padding: 2rem;
+          }
         }
         &__temprature {
           grid-column: 2/3;
           grid-row: 1/2;
+          @include respond(tab-port) {
+            grid-column: 1/2;
+            grid-row: 3/4;
+          }
         }
         &__humidity {
           grid-column: 3/4;
           grid-row: 1/2;
+          @include respond(tab-land) {
+            grid-column: 1/2;
+            grid-row: 3/4;
+          }
+          @include respond(tab-port) {
+            grid-column: 1/2;
+            grid-row: 4/5;
+          }
         }
         &__precipitation {
           grid-column: 2/3;
           grid-row: 2/3;
+          @include respond(tab-port) {
+            grid-column: 1/2;
+            grid-row: 5/6;
+          }
         }
         &__uvindex {
           grid-column: 3/4;
           grid-row: 2/3;
+          @include respond(tab-land) {
+            grid-column: 2/3;
+            grid-row: 3/4;
+          }
+          @include respond(tab-port) {
+            grid-column: 1/2;
+            grid-row: 6/7;
+          }
         }
       }
     }
